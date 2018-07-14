@@ -23,7 +23,6 @@ class AnswerViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        pointLabel.text = "Point: \(currentPoint)"
         setBlurEffect()
         displayAnswer()
     }
@@ -37,6 +36,7 @@ class AnswerViewController: UIViewController {
     }
     
     private func displayAnswer() {
+        pointLabel.text = "Point: \(currentPoint)"
         if let question = questionViewModel {
             questionImageView.downloadedFrom(url: question.imageUrl)
             standFirstLabel.text = question.standFirst
@@ -53,12 +53,12 @@ class AnswerViewController: UIViewController {
     // MARK: - Navigation
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "nextQuestion",
+        if segue.identifier == "unwindToQuestion",
             let viewController = segue.destination as? QuestionViewController
         {
-//            viewController.questionViewModels = self.questionViewModels
+            viewController.currentPoint = currentPoint
+            viewController.currentIndex = currentIndex + 1
         }
     }
-    
 
 }

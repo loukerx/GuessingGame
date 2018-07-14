@@ -41,19 +41,16 @@ class QuestionViewController: UIViewController {
     }
 
     private func displayQuestion() {
+        pointLabel.text = "Point: \(currentPoint)"
         if currentIndex < questionViewModels.count - 1 {
             let question = questionViewModels[currentIndex]
             questionImageView.downloadedFrom(url: question.imageUrl)
             firstAnswerButton.setTitle(question.firstAnswer, for: .normal)
             secondAnswerButton.setTitle(question.secondAnswer, for: .normal)
             thirdAnswerButton.setTitle(question.thirdAnswer, for: .normal)
-            
         } else {
             //perform end game.
-        }
- 
- 
-        
+        } 
     }
 
     // MARK: - Button Actions
@@ -97,4 +94,7 @@ class QuestionViewController: UIViewController {
         } 
     }
 
+    @IBAction func unwindToQuestionWithSegue(_ segue: UIStoryboardSegue) {
+        displayQuestion()
+    }
 }

@@ -10,7 +10,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "GuessingGame/Modules/Main/Controller/MainTableViewController.swift"
-            timestampString = "553241628.552371"
+            timestampString = "553243497.448717"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "40"
@@ -22,11 +22,11 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "No"
+            shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "GuessingGame/Modules/Questions/Controller/QuestionViewController.swift"
-            timestampString = "553241628.552513"
+            timestampString = "553243497.448815"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "30"
@@ -42,7 +42,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "GuessingGame/Modules/Util/Model/UIImageView+Game.swift"
-            timestampString = "553241628.552623"
+            timestampString = "553243497.4489"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "22"
@@ -58,7 +58,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "GuessingGame/Modules/Util/Model/UIImageView+Game.swift"
-            timestampString = "553241628.552743"
+            timestampString = "553243497.448956"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "15"
@@ -70,15 +70,15 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "GuessingGame/Modules/Questions/Controller/QuestionViewController.swift"
-            timestampString = "553241628.552832"
+            timestampString = "553243497.449006"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "47"
-            endingLineNumber = "47"
+            startingLineNumber = "45"
+            endingLineNumber = "45"
             landmarkName = "displayQuestion()"
             landmarkType = "7">
          </BreakpointContent>
@@ -90,7 +90,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "GuessingGame/Modules/Util/Model/UIImageView+Game.swift"
-            timestampString = "553241628.552902"
+            timestampString = "553243497.449078"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "14"
@@ -138,11 +138,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "GuessingGame/Modules/Questions/Controller/QuestionViewController.swift"
-            timestampString = "553241628.5529521"
+            timestampString = "553243497.449128"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "97"
-            endingLineNumber = "97"
+            startingLineNumber = "91"
+            endingLineNumber = "91"
             landmarkName = "prepare(for:sender:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -150,15 +150,15 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "GuessingGame/Modules/Questions/Controller/QuestionViewController.swift"
-            timestampString = "553241628.553001"
+            timestampString = "553243497.449183"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "78"
-            endingLineNumber = "78"
+            startingLineNumber = "72"
+            endingLineNumber = "72"
             landmarkName = "checkAndDisplayAnswerScreen(selectedIndex:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -169,13 +169,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "GuessingGame/Modules/Questions/Controller/AnswerViewController.swift"
-            timestampString = "553241628.5530519"
+            filePath = "GuessingGame/Modules/Questions/Controller/QuestionViewController.swift"
+            timestampString = "553243497.449241"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "27"
-            endingLineNumber = "27"
-            landmarkName = "viewDidLoad()"
+            startingLineNumber = "98"
+            endingLineNumber = "98"
+            landmarkName = "unwindToQuestionWithSegue(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

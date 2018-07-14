@@ -29,5 +29,5 @@ struct Question: Decodable {
     let standFirst: String
     let storyUrl: URL
     let section: String
-    let headlines: [String] // Always 3 headlines.
+    let headlines: [String] 
 }
