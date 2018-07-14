@@ -22,14 +22,17 @@ class QuestionViewController: UIViewController {
     // MARK: - Public
     
     var questionViewModels = [QuestionViewModel]()
+    var currentIndex = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setBlurEffectBackground()
-        
-           // calculate points.
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        // calculate points.
+        displayQuestion()
+    }
     private func setBlurEffectBackground(){
         backgroundImageView.image = UIImage(named: "BackgroundImage")
         let blurEffect = UIBlurEffect(style: .dark)
@@ -39,12 +42,21 @@ class QuestionViewController: UIViewController {
     }
 
     private func displayQuestion() {
-     questionImageView.image = UIImage(
-        
+        if currentIndex < questionViewModels.count - 1 {
+            let question = questionViewModels[currentIndex]
+            questionImageView.downloadedFrom(url: question.imageUrl)
+            firstAnswerButton.setTitle(question.firstAnswer, for: .normal)
+            secondAnswerButton.setTitle(question.secondAnswer, for: .normal)
+            thirdAnswerButton.setTitle(question.thirdAnswer, for: .normal)
+            
+        } else {
+            //perform end game.
+        }
+ 
+ 
         
     }
 
-    /*
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
@@ -52,6 +64,5 @@ class QuestionViewController: UIViewController {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
     }
-    */
 
 }

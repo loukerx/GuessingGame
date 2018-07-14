@@ -6,7 +6,7 @@
 //  Copyright © 2018 Yin Hua. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 extension UIImageView {
     func downloadedFrom(url: URL, contentMode mode: UIViewContentMode = .scaleAspectFit) {
@@ -22,10 +22,5 @@ extension UIImageView {
                 self.image = image
             }
             }.resume()
-    }
-    
-    func downloadedFrom(link: String, contentMode mode: UIViewContentMode = .scaleAspectFit) {
-        guard let url = URL(string: link) else { return }
-        downloadedFrom(url: url, contentMode: mode)
     }
 }

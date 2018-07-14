@@ -1,6 +1,9 @@
 # GuessingGame
 #
 build/
+xcuserdata
+*.xccheckout
+*.moved-aside
 DerivedData
 *.hmap
 *.ipa

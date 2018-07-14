@@ -15,7 +15,7 @@ class AnswerViewController: UIViewController {
     @IBOutlet weak var questionImageView: UIImageView!
     @IBOutlet weak var standFirstLabel: UILabel!
     
-    var questionViewModel = QuestionViewModel
+    var questionViewModel: QuestionViewModel?
     
     override func viewDidLoad() {
         super.viewDidLoad()

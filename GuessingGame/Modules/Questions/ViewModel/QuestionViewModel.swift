@@ -14,7 +14,9 @@ struct QuestionViewModel {
     let standFirst: String
     let storyUrl: URL
     let section: String
-    let headlines: [String]
+    let firstAnswer: String
+    let secondAnswer: String
+    let thirdAnswer: String
     
     init(question: Question) {
         self.correctAnswerIndex = question.correctAnswerIndex
@@ -22,6 +24,8 @@ struct QuestionViewModel {
         self.standFirst = question.standFirst
         self.storyUrl = question.storyUrl
         self.section = question.section
-        self.headlines = question.headlines
+        self.firstAnswer = question.headlines[0]
+        self.secondAnswer = question.headlines[1]
+        self.thirdAnswer = question.headlines[2]
     }
 }
