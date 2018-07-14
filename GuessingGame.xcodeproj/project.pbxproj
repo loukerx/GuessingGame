@@ -21,6 +21,7 @@
 		AEB29BA020F9A66C0091C9B4 /* QuestionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEB29B9F20F9A66C0091C9B4 /* QuestionViewModel.swift */; };
 		AEB29BA620F9ACFC0091C9B4 /* MainTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEB29BA520F9ACFC0091C9B4 /* MainTableViewController.swift */; };
 		AEB29BAA20F9B3950091C9B4 /* UIImageView+Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEB29BA920F9B3950091C9B4 /* UIImageView+Game.swift */; };
+		AEB29BB020F9D7B20091C9B4 /* GameManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEB29BAF20F9D7B20091C9B4 /* GameManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +53,7 @@
 		AEB29B9F20F9A66C0091C9B4 /* QuestionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionViewModel.swift; sourceTree = "<group>"; };
 		AEB29BA520F9ACFC0091C9B4 /* MainTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTableViewController.swift; sourceTree = "<group>"; };
 		AEB29BA920F9B3950091C9B4 /* UIImageView+Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Game.swift"; sourceTree = "<group>"; };
+		AEB29BAF20F9D7B20091C9B4 /* GameManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +114,7 @@
 			isa = PBXGroup;
 			children = (
 				AEB29B9B20F99D280091C9B4 /* Game.swift */,
+				AEB29BAF20F9D7B20091C9B4 /* GameManager.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -328,6 +331,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AE43639B20F4C0A9008A0D50 /* AnswerViewController.swift in Sources */,
+				AEB29BB020F9D7B20091C9B4 /* GameManager.swift in Sources */,
 				AEB29B9C20F99D280091C9B4 /* Game.swift in Sources */,
 				AE43636520F462F3008A0D50 /* AppDelegate.swift in Sources */,
 				AEB29BAA20F9B3950091C9B4 /* UIImageView+Game.swift in Sources */,

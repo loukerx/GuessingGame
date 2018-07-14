@@ -19,17 +19,20 @@ class QuestionViewController: UIViewController {
     @IBOutlet private weak var secondAnswerButton: UIButton!
     @IBOutlet private weak var thirdAnswerButton: UIButton!
     
+    private struct Identifier {
+        static let answer = "answer"
+        static let unwindToMain = "unwindToMain"
+    }
+    
     // MARK: - Public
     
     var questionViewModels = [QuestionViewModel]()
-    var currentIndex = 0
-    var currentPoint = 0
+    var gameManager = GameManager()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setBlurEffectBackground()
-        // calculate points.
-        displayQuestion()
+        displayQuestionScreen()
     }
 
     private func setBlurEffectBackground(){
@@ -40,17 +43,17 @@ class QuestionViewController: UIViewController {
         backgroundImageView.addSubview(blurView)
     }
 
-    private func displayQuestion() {
-        pointLabel.text = "Point: \(currentPoint)"
-        if currentIndex < questionViewModels.count - 1 {
-            let question = questionViewModels[currentIndex]
+    private func displayQuestionScreen() {
+        pointLabel.text = gameManager.pointMessage
+        if gameManager.currentIndex < questionViewModels.count - 1 {
+            let question = questionViewModels[gameManager.currentIndex]
             questionImageView.downloadedFrom(url: question.imageUrl)
             firstAnswerButton.setTitle(question.firstAnswer, for: .normal)
             secondAnswerButton.setTitle(question.secondAnswer, for: .normal)
             thirdAnswerButton.setTitle(question.thirdAnswer, for: .normal)
         } else {
-            //perform end game.
-        } 
+            performSegue(withIdentifier: Identifier.unwindToMain, sender: nil)
+        }
     }
 
     // MARK: - Button Actions
@@ -68,33 +71,36 @@ class QuestionViewController: UIViewController {
     }
     
     private func checkAndDisplayAnswerScreen(selectedIndex: Int) {
-        let question = questionViewModels[currentIndex]
+        let question = questionViewModels[gameManager.currentIndex]
         if selectedIndex == question.correctAnswerIndex {
-            currentPoint += 1
+            gameManager.currentPoint += 1
         } else {
-            currentPoint -= 1
+            gameManager.currentPoint -= 1
         }
-        performSegue(withIdentifier: "answer", sender: nil)
+        performSegue(withIdentifier: Identifier.answer, sender: nil)
     }
     
     @IBAction func tapSkipButon(_ sender: Any) {
-        currentIndex += 1
-        displayQuestion() 
+        gameManager.currentIndex += 1
+        displayQuestionScreen()
     }
     
     // MARK: - Navigation
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "answer",
+        if segue.identifier == Identifier.answer,
             let viewController = segue.destination as? AnswerViewController
         {
-            viewController.questionViewModel = questionViewModels[currentIndex]
-            viewController.currentPoint = currentPoint
-            viewController.currentIndex = currentIndex
-        } 
+            viewController.questionViewModel = questionViewModels[gameManager.currentIndex]
+            viewController.gameManager = gameManager
+        } else if segue.identifier == Identifier.unwindToMain,
+            let viewController = segue.destination as? MainTableViewController
+        {
+            viewController.gameManager = gameManager
+        }
     }
 
     @IBAction func unwindToQuestionWithSegue(_ segue: UIStoryboardSegue) {
-        displayQuestion()
+        displayQuestionScreen()
     }
 }

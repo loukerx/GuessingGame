@@ -271,9 +271,11 @@
                         <outlet property="secondAnswerButton" destination="bkQ-qw-SeW" id="hSY-2s-RVa"/>
                         <outlet property="thirdAnswerButton" destination="6Fj-hE-2c9" id="Hxl-KH-K1X"/>
                         <segue destination="c5Z-ve-akR" kind="presentation" identifier="answer" animates="NO" id="XU2-bG-XHx"/>
+                        <segue destination="Ma8-OD-sVg" kind="unwind" identifier="unwindToMain" unwindAction="unwindToMainWithSegue:" id="bVP-dQ-sQ7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bKb-c7-Sig" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="Ma8-OD-sVg" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="2335" y="915"/>
         </scene>

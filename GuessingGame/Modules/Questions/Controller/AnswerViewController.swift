@@ -16,10 +16,13 @@ class AnswerViewController: UIViewController {
     @IBOutlet weak var questionImageView: UIImageView!
     @IBOutlet weak var standFirstLabel: UILabel!
     
+    private struct Identifier {
+        static let unwindToQuestion = "unwindToQuestion"
+    }
+    
     // MARK: - Public 
     var questionViewModel: QuestionViewModel?
-    var currentIndex = 0
-    var currentPoint = 0
+    var gameManager = GameManager()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,7 +39,7 @@ class AnswerViewController: UIViewController {
     }
     
     private func displayAnswer() {
-        pointLabel.text = "Point: \(currentPoint)"
+        pointLabel.text = gameManager.pointMessage
         if let question = questionViewModel {
             questionImageView.downloadedFrom(url: question.imageUrl)
             standFirstLabel.text = question.standFirst
@@ -53,11 +56,11 @@ class AnswerViewController: UIViewController {
     // MARK: - Navigation
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "unwindToQuestion",
+        if segue.identifier == Identifier.unwindToQuestion,
             let viewController = segue.destination as? QuestionViewController
         {
-            viewController.currentPoint = currentPoint
-            viewController.currentIndex = currentIndex + 1
+            gameManager.currentIndex += 1
+            viewController.gameManager = gameManager
         }
     }
 

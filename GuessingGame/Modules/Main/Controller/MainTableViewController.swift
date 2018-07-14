@@ -14,7 +14,13 @@ class MainTableViewController: UITableViewController {
     
     // MARK: - Property
     private var questionViewModels = [QuestionViewModel]()
-
+    
+    private struct Identifier {
+        static let start = "start"
+    }
+    
+    var gameManager = GameManager()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         fetchData()
@@ -34,12 +40,24 @@ class MainTableViewController: UITableViewController {
     // MARK: - Navigation
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "start",
+        if segue.identifier == Identifier.start,
             let viewController = segue.destination as? QuestionViewController
         {
             viewController.questionViewModels = self.questionViewModels
         }
     }
  
-
+    @IBAction func unwindToMainWithSegue(_ segue: UIStoryboardSegue) {
+        DispatchQueue.main.async {
+            let alert = UIAlertController(title: "Game End", message: "You total points is \(self.gameManager.currentPoint)", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "Ok",
+                                          style: .default,
+                                          handler:
+                { [weak self] action in
+                    guard let strongSelf = self else { return }
+                    strongSelf.dismiss(animated: true, completion: nil)
+            }))
+            self.present(alert, animated: true)
+        }
+    }
 }
