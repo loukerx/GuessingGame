@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SafariServices
 
 class AnswerViewController: UIViewController {
     
@@ -15,12 +16,16 @@ class AnswerViewController: UIViewController {
     @IBOutlet weak var questionImageView: UIImageView!
     @IBOutlet weak var standFirstLabel: UILabel!
     
+    // MARK: - Public 
     var questionViewModel: QuestionViewModel?
+    var currentIndex = 0
+    var currentPoint = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        pointLabel.text = "Point: \(currentPoint)"
         setBlurEffect()
+        displayAnswer()
     }
 
     private func setBlurEffect(){
@@ -31,17 +36,29 @@ class AnswerViewController: UIViewController {
         backgroundImageView.addSubview(blurView)
     }
     
-    @IBAction func tapReadArticleButton(_ sender: Any) {
+    private func displayAnswer() {
+        if let question = questionViewModel {
+            questionImageView.downloadedFrom(url: question.imageUrl)
+            standFirstLabel.text = question.standFirst
+        }
     }
     
-    /*
+    @IBAction func tapReadArticleButton(_ sender: Any) {
+        if let question = questionViewModel {
+            let safariViewController = SFSafariViewController(url: question.storyUrl)
+            self.present(safariViewController, animated: true, completion: nil)
+        }
+    }
+    
     // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        if segue.identifier == "nextQuestion",
+            let viewController = segue.destination as? QuestionViewController
+        {
+//            viewController.questionViewModels = self.questionViewModels
+        }
     }
-    */
+    
 
 }

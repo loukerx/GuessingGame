@@ -166,7 +166,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <segue destination="KaF-W1-zwe" kind="presentation" identifier="nextQuestion" animates="NO" id="OaX-E6-Xit"/>
+                                    <action selector="tapSkipButon:" destination="ogz-vv-RZl" eventType="touchUpInside" id="79b-Ux-lDW"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="characterWrap" translatesAutoresizingMaskIntoConstraints="NO" id="6Fj-hE-2c9">
@@ -179,6 +179,9 @@
                                 <state key="normal" title="Answer 3">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="tapThirdAnswerButton:" destination="ogz-vv-RZl" eventType="touchUpInside" id="SEx-6t-UyZ"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="characterWrap" translatesAutoresizingMaskIntoConstraints="NO" id="bkQ-qw-SeW">
                                 <rect key="frame" x="20" y="457" width="335" height="60"/>
@@ -190,6 +193,9 @@
                                 <state key="normal" title="Answer 2">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="tapSecondAnswerButton:" destination="ogz-vv-RZl" eventType="touchUpInside" id="Vcj-bb-v5K"/>
+                                </connections>
                             </button>
                             <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="characterWrap" translatesAutoresizingMaskIntoConstraints="NO" id="nw2-Fc-Wyu">
                                 <rect key="frame" x="20" y="377" width="335" height="60"/>
@@ -208,6 +214,9 @@
                                         <integer key="value" value="15"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="tapFirstAnswerButton:" destination="ogz-vv-RZl" eventType="touchUpInside" id="MU7-JN-Urb"/>
+                                </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="kjX-PK-b9A">
                                 <rect key="frame" x="20" y="107" width="335" height="220"/>
@@ -277,58 +286,51 @@
                                 <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Point: 0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dsd-pu-Osa">
-                                <rect key="frame" x="20" y="40" width="335" height="87"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <rect key="frame" x="20" y="40" width="335" height="67"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
-                                <nil key="textColor"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aOI-vi-VBx">
-                                <rect key="frame" x="20" y="617" width="335" height="30"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <rect key="frame" x="20" y="597" width="335" height="50"/>
+                                <color key="backgroundColor" red="0.23198341836734693" green="0.69996279761904767" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="Ym9-mR-xD3"/>
+                                    <constraint firstAttribute="height" constant="50" id="Ym9-mR-xD3"/>
                                 </constraints>
                                 <state key="normal" title="Next Question">
-                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
                                     <segue destination="KaF-W1-zwe" kind="presentation" identifier="nextQuestion" animates="NO" id="jAv-t3-GWB"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ag4-gL-9wh">
-                                <rect key="frame" x="20" y="537" width="335" height="60"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ag4-gL-9wh">
+                                <rect key="frame" x="20" y="537" width="335" height="40"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="60" id="tXI-yU-YqK"/>
+                                    <constraint firstAttribute="height" constant="40" id="tXI-yU-YqK"/>
                                 </constraints>
-                                <state key="normal">
-                                    <attributedString key="attributedTitle">
-                                        <fragment content="Read Article">
-                                            <attributes>
-                                                <color key="NSColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <font key="NSFont" metaFont="system" size="15"/>
-                                                <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                            </attributes>
-                                        </fragment>
-                                    </attributedString>
+                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="15"/>
+                                <state key="normal" title="Read Article">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
                                     <action selector="tapReadArticleButton:" destination="c5Z-ve-akR" eventType="touchUpInside" id="tWP-ks-MLe"/>
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="gNS-nK-Kta">
-                                <rect key="frame" x="20" y="147" width="335" height="200"/>
+                                <rect key="frame" x="20" y="127" width="335" height="220"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="200" id="10t-xf-hN1"/>
+                                    <constraint firstAttribute="height" constant="220" id="10t-xf-hN1"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="StandFirst" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hca-f9-rjE">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="StandFirst" textAlignment="center" lineBreakMode="characterWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hca-f9-rjE">
                                 <rect key="frame" x="20" y="367" width="335" height="150"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="150" id="Yjg-z1-z4e"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -364,7 +366,6 @@
                         <outlet property="pointLabel" destination="dsd-pu-Osa" id="aKh-n1-ned"/>
                         <outlet property="questionImageView" destination="gNS-nK-Kta" id="H36-5D-XUj"/>
                         <outlet property="standFirstLabel" destination="hca-f9-rjE" id="quz-8I-XXQ"/>
-                        <outlet property="thirdAnswerButton" destination="ag4-gL-9wh" id="BKC-5U-ImL"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dEW-dU-pVl" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -426,7 +427,4 @@
             <point key="canvasLocation" x="1396" y="-31.03448275862069"/>
         </scene>
     </scenes>
-    <inferredMetricsTieBreakers>
-        <segue reference="OaX-E6-Xit"/>
-    </inferredMetricsTieBreakers>
 </document>

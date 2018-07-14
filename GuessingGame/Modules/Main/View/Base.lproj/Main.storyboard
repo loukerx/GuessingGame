@@ -44,7 +44,7 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="RnU-bT-CfK" kind="presentation" identifier="start" id="g3U-cT-oTi"/>
+                                            <segue destination="RnU-bT-CfK" kind="presentation" identifier="start" animates="NO" id="g3U-cT-oTi"/>
                                         </connections>
                                     </tableViewCell>
                                 </cells>

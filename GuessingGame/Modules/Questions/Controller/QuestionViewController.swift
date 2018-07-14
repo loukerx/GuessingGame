@@ -23,16 +23,15 @@ class QuestionViewController: UIViewController {
     
     var questionViewModels = [QuestionViewModel]()
     var currentIndex = 0
+    var currentPoint = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setBlurEffectBackground()
-    }
-
-    override func viewWillAppear(_ animated: Bool) {
         // calculate points.
         displayQuestion()
     }
+
     private func setBlurEffectBackground(){
         backgroundImageView.image = UIImage(named: "BackgroundImage")
         let blurEffect = UIBlurEffect(style: .dark)
@@ -57,12 +56,45 @@ class QuestionViewController: UIViewController {
         
     }
 
+    // MARK: - Button Actions
+    
+    @IBAction func tapFirstAnswerButton(_ sender: Any) {
+        checkAndDisplayAnswerScreen(selectedIndex: 0)
+    }
+    
+    @IBAction func tapSecondAnswerButton(_ sender: Any) {
+        checkAndDisplayAnswerScreen(selectedIndex: 1)
+    }
+    
+    @IBAction func tapThirdAnswerButton(_ sender: Any) {
+        checkAndDisplayAnswerScreen(selectedIndex: 2)
+    }
+    
+    private func checkAndDisplayAnswerScreen(selectedIndex: Int) {
+        let question = questionViewModels[currentIndex]
+        if selectedIndex == question.correctAnswerIndex {
+            currentPoint += 1
+        } else {
+            currentPoint -= 1
+        }
+        performSegue(withIdentifier: "answer", sender: nil)
+    }
+    
+    @IBAction func tapSkipButon(_ sender: Any) {
+        currentIndex += 1
+        displayQuestion() 
+    }
+    
     // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        if segue.identifier == "answer",
+            let viewController = segue.destination as? AnswerViewController
+        {
+            viewController.questionViewModel = questionViewModels[currentIndex]
+            viewController.currentPoint = currentPoint
+            viewController.currentIndex = currentIndex
+        } 
     }
 
 }
