@@ -12,7 +12,7 @@
         <!--Welcome-->
         <scene sceneID="DQw-hy-5Rm">
             <objects>
-                <tableViewController id="N5z-af-wAz" sceneMemberID="viewController">
+                <tableViewController id="N5z-af-wAz" customClass="MainTableViewController" customModule="GuessingGame" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="sHH-vD-Gph">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -20,7 +20,7 @@
                         <sections>
                             <tableViewSection id="deK-er-uLH">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="G5t-2s-QBz" style="IBUITableViewCellStyleDefault" id="gFZ-bv-6R3">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="G5t-2s-QBz" detailTextLabel="tyF-S8-mxL" style="IBUITableViewCellStyleValue1" id="gFZ-bv-6R3">
                                         <rect key="frame" x="0.0" y="35" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="gFZ-bv-6R3" id="XKA-FZ-SUd">
@@ -28,7 +28,14 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Start Game" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="G5t-2s-QBz">
-                                                    <rect key="frame" x="16" y="0.0" width="324" height="43.5"/>
+                                                    <rect key="frame" x="16" y="12" width="87.5" height="20.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Detail" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="tyF-S8-mxL">
+                                                    <rect key="frame" x="296" y="12" width="44" height="20.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -49,6 +56,9 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Welcome" id="WMu-H8-zZl"/>
+                    <connections>
+                        <outlet property="gameNameLabel" destination="tyF-S8-mxL" id="A5X-ZW-G4b"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EQq-4G-dV8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -60,7 +70,7 @@
                 <viewControllerPlaceholder storyboardName="Question" id="RnU-bT-CfK" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="N3i-Rf-VlK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1169" y="-22"/>
+            <point key="canvasLocation" x="1164" y="-31"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="F24-dK-pK4">

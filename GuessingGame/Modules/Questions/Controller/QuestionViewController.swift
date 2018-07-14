@@ -1,5 +1,5 @@
 //
-//  AnswerViewController.swift
+//  QuestionViewController.swift
 //  GuessingGame
 //
 //  Created by Yin Hua on 10/7/18.
@@ -8,31 +8,42 @@
 
 import UIKit
 
-class AnswerViewController: UIViewController {
-    @IBOutlet weak var backgroundImageView: UIImageView!
+class QuestionViewController: UIViewController {
+
+    // MARK: - Private
     
-    @IBOutlet weak var pointLabel: UILabel!
+    @IBOutlet private weak var backgroundImageView: UIImageView!
+    @IBOutlet private weak var pointLabel: UILabel!
+    @IBOutlet private weak var questionImageView: UIImageView!
+    @IBOutlet private weak var firstAnswerButton: UIButton!
+    @IBOutlet private weak var secondAnswerButton: UIButton!
+    @IBOutlet private weak var thirdAnswerButton: UIButton!
     
-    @IBOutlet weak var questionImageView: UIImageView!
+    // MARK: - Public
     
-    @IBOutlet weak var standFirstLabel: UILabel!
+    var questionViewModels = [QuestionViewModel]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        setBlurEffect()
+        setBlurEffectBackground()
+        
+           // calculate points.
     }
 
-    private func setBlurEffect(){
+    private func setBlurEffectBackground(){
         backgroundImageView.image = UIImage(named: "BackgroundImage")
         let blurEffect = UIBlurEffect(style: .dark)
         let blurView = UIVisualEffectView(effect: blurEffect)
         blurView.frame = self.view.bounds
         backgroundImageView.addSubview(blurView)
     }
-    
-    @IBAction func tapReadArticleButton(_ sender: Any) {
+
+    private func displayQuestion() {
+     questionImageView.image = UIImage(
+        
+        
     }
-    
+
     /*
     // MARK: - Navigation
 
