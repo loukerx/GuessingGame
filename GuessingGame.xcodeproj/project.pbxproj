@@ -114,7 +114,6 @@
 			isa = PBXGroup;
 			children = (
 				AEB29B9B20F99D280091C9B4 /* Game.swift */,
-				AEB29BAF20F9D7B20091C9B4 /* GameManager.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -150,6 +149,7 @@
 		AE43638820F4641B008A0D50 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				AEB29BAF20F9D7B20091C9B4 /* GameManager.swift */,
 				AEB29B9F20F9A66C0091C9B4 /* QuestionViewModel.swift */,
 			);
 			path = ViewModel;
